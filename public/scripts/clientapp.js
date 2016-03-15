@@ -13,6 +13,8 @@ function postData() {
         values[field.name] = field.value;
     });
 
+    $('#sql-form').find('input[type = text]').val('');
+
     console.log(values);
 
     $.ajax({
@@ -51,10 +53,6 @@ function appendDom(person){
     var $el = $('.people').children().last();
 
     $el.append('<p>' + person[i].name + '</p>');
-    $el.append('<p>' + person[i].address + '</p>');
-    $el.append('<p>' + person[i].city + '</p>');
-    $el.append('<p>' + person[i].state + '</p>');
-    $el.append('<p>' + person[i].zip_code + '</p>');
-
-}
+    $el.append('<p>' + person[i].address + ' ' + person[i].city + ', ' + person[i].state + ' ' + person[i].zip_code + '</p>');
+    }
 }
